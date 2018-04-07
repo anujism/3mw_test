@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+        <h1>Sites</h1>
+
+        <ul class="list-group">
+            {% if site_list %}
+                {% for site in site_list %}
+                    <li class="list-group-item"><a href="/sites/{{ site.id }}/">{{ site.title }}</a></li>
+                {% endfor %}
+            {% else %}
+                <li class="list-group-item">There are no sites in the system.</li>
+            {% endif %}
+        </ul>
+{% endblock %}

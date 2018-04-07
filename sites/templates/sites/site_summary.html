@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Summary</h1>
+
+        <a href="/summary"><button type="button" class="btn btn-primary {% if not child %}active{% endif %}">Sum</button></a>
+        <a href="/summary-average"><button type="button" class="btn btn-primary {% if child %}active{% endif %}">Average</button></a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td><strong>Site</strong></td>
+            <td><strong>A Value</strong></td><td><strong>B Value</strong></td>
+        </tr>
+    </thead>
+
+      {% for site in site_list %}
+        <tr>
+            <td>{{ site.title }}</td>
+            <td>{{ site.a_value }}</td>
+            <td>{{ site.b_value }}</td>
+        </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

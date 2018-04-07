@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Site Details - {{ site.title }}</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td><strong>Date</strong></td>
+                <td><strong>A Value</strong></td>
+                <td><strong>B Value</strong></td>
+            </tr>
+        </thead>
+            {% for detail in site.details.all %}
+            <tr>
+                <td>{{ detail.date }}</td>
+                <td>{{ detail.a_value }}</td>
+                <td>{{ detail.b_value }}</td>
+            </tr>
+            {% endfor %}
+    </table>
+{% endblock %}
